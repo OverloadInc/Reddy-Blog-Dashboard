@@ -9,10 +9,18 @@ import {Category} from "../../models/category";
 })
 export class CategoriesComponent implements OnInit {
 
+  categoryArray: Array<any> = [];
+  formId?: string;
+  formCategory?: string;
+  formStatus: string = 'Add';
+
   constructor(private categoriesService: CategoriesService) {
   }
 
   ngOnInit(): void {
+    this.categoriesService.loadData().subscribe(value => {
+      this.categoryArray = value;
+    });
   }
 
   onSubmit(formData: any) {
@@ -20,12 +28,24 @@ export class CategoriesComponent implements OnInit {
       category: formData.value.category
     };
 
-    this.categoriesService.saveData(categoryData);
+    if(this.formStatus == 'Add') {
+      this.categoriesService.saveData(categoryData);
+    }
+    else if(this.formStatus == 'Edit') {
+      this.categoriesService.updateData(this.formId, categoryData);
+      this.formStatus = 'Add';
+    }
 
-    /*let subCategoryData = {
-      subCategory: 'SubCategory 1'
-    };*/
+    formData.reset();
+  }
 
+  onEdit(category: string, id: string) {
+    this.formCategory = category;
+    this.formId = id;
+    this.formStatus = 'Edit';
+  }
 
+  onDelete(id: string) {
+    this.categoriesService.deleteData(id);
   }
 }
