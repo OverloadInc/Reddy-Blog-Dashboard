@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import {Route, RouterModule, Routes} from "@angular/router";
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import {CategoriesComponent} from "./components/categories/categories.component";
 
-// Build the routes to access the different pages of the website
 const routes: Routes = [
-
+  {path: '', component: DashboardComponent},
+  {path: 'categories', component: CategoriesComponent}
 ];
 
 @NgModule({
