@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AngularFireModule} from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
@@ -18,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AllPostsComponent } from './components/posts/all-posts/all-posts.component';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { NewPostComponent } from './components/posts/new-post/new-post.component
     DashboardComponent,
     CategoriesComponent,
     AllPostsComponent,
-    NewPostComponent
+    NewPostComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { NewPostComponent } from './components/posts/new-post/new-post.component
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
