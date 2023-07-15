@@ -4,4 +4,9 @@
     <a href="#" class="site-logo">Reddy Blog</a>
   </div>
 
+  <div class="container justify-content-center" *ngIf="isLoggedIn$ | async">
+    <a href="#" class="mr-3">{{loggedUser}}</a>
+    <button class="btn btn-sm btn-info bg-secondary-theme text-theme-primary" (click)="endSession()">Logout</button>
+  </div>
+
 </header>
