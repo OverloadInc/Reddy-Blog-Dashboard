@@ -11,7 +11,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
-import { environment } from "../environments/environment.development";
+import { environment } from "../environments/environment.prod";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
