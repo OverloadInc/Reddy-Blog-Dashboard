@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -20,6 +20,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { AllPostsComponent } from './components/posts/all-posts/all-posts.component';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { SubscribersComponent } from './components/subscribers/subscribers.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './components/auth/login/login.component';
     CategoriesComponent,
     AllPostsComponent,
     NewPostComponent,
-    LoginComponent
+    LoginComponent,
+    SubscribersComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { LoginComponent } from './components/auth/login/login.component';
     AngularEditorModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
